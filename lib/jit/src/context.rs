@@ -94,6 +94,11 @@ impl Context {
         )
     }
 
+    /// Get an `Instance` in this `Namespace` for given index.
+    pub fn get_instance(&mut self, index: InstanceIndex) -> &Instance {
+        self.namespace.get_instance(index)
+    }
+
     /// Return the instance index for the instance with the given name.
     pub fn get_instance_index(
         &mut self,

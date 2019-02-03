@@ -47,6 +47,11 @@ impl Namespace {
         index
     }
 
+    /// Get an `Instance` in this `Namespace` for given index.
+    pub fn get_instance(&mut self, index: InstanceIndex) -> &Instance {
+        &self.instances[index]
+    }
+
     /// Get the instance index registered with the given `instance_name`.
     pub fn get_instance_index(&mut self, instance_name: &str) -> Option<InstanceIndex> {
         self.names.get_mut(instance_name).cloned()
